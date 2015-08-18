@@ -1,0 +1,30 @@
+{
+  "name": "action-names",
+  "version": "0.0.1",
+  "description": "Standard actions names for Flux",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/tape/bin/tape tests/**/*.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sporto/action-names.git"
+  },
+  "keywords": [
+    "flux",
+    "action",
+    "redux",
+    "constants",
+    "events"
+  ],
+  "author": "Sebastian Porto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sporto/action-names/issues"
+  },
+  "homepage": "https://github.com/sporto/action-names#readme",
+  "devDependencies": {
+    "tap-spec": "^4.0.2",
+    "tape": "^4.2.0"
+  }
+}
