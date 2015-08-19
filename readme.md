@@ -1,7 +1,8 @@
 # Standard Action Names for Flux
 
-## Install
+[ ![Codeship Status for Versent/action-names](https://codeship.com/projects/5a75b0f0-284e-0133-aab6-66f03b379c4a/status?branch=master)](https://codeship.com/projects/97650)
 
+## Install
 
 ```
 npm install action-names --save-dev
