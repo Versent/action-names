@@ -26,6 +26,10 @@
   "devDependencies": {
     "tap-nyan": "0.0.2",
     "tap-spec": "^4.0.2",
-    "tape": "^4.2.0"
+    "tape": "^4.2.0",
+    "tape-catch": "^1.0.4"
+  },
+  "dependencies": {
+    "lodash.snakecase": "^3.0.1"
   }
 }

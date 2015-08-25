@@ -1,5 +1,7 @@
+var snakeCase = require('lodash.snakecase');
+
 function addGroup(resource, actionTypes, group) {
-  var upperResource = resource.toUpperCase();
+  var upperResource = snakeCase(resource).toUpperCase();
   var upperGroup    = group.toUpperCase();
 
   var start        = upperResource + '_' + upperGroup + '_START';

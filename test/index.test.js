@@ -46,3 +46,22 @@ test('returns aliases', function(t) {
 
   t.end();
 });
+
+
+test('it handles different cases', function(t) {
+  var names;
+
+  names = actionNames('superUsers');
+  t.equal(names.fetchStart, 'SUPER_USERS_FETCH_START');
+
+  names = actionNames('super-users');
+  t.equal(names.fetchStart, 'SUPER_USERS_FETCH_START');
+
+  names = actionNames('super_users');
+  t.equal(names.fetchStart, 'SUPER_USERS_FETCH_START');
+
+  names = actionNames('super users');
+  t.equal(names.fetchStart, 'SUPER_USERS_FETCH_START');
+
+  t.end();
+});
