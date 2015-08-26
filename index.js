@@ -1,4 +1,5 @@
 var snakeCase = require('lodash.snakecase');
+var trim      = require('lodash.trim');
 
 function addGroup(resource, actionTypes, group) {
   var upperResource = snakeCase(resource).toUpperCase();
@@ -20,6 +21,11 @@ function addGroup(resource, actionTypes, group) {
 }
 
 module.exports = function(resource) {
+  if (resource == null) throw new Error('Expected resource');
+
+  resource = trim(resource);
+  if (resource == '')   throw new Error('Expected resource');
+
   const actionTypes = {};
 
   addGroup(resource, actionTypes, 'fetch');

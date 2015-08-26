@@ -1,4 +1,4 @@
-var test = require('tape');
+var test        = require('tape-catch');
 var actionNames = require('../index.js');
 
 test('returns the action names', function(t) {
@@ -43,6 +43,31 @@ test('returns aliases', function(t) {
   t.equal(names.deleteStart,   'USERS_DELETE_START');
   t.equal(names.deleteSuccess, 'USERS_DELETE_SUCCESS');
   t.equal(names.deleteError,   'USERS_DELETE_ERROR');
+
+  t.end();
+});
+
+test('throws if unexpected', function(t) {
+
+  function withValid() {
+    actionNames('users');
+  }
+  t.doesNotThrow(withValid, 'doesnt throw');
+
+  function withVoid() {
+    actionNames(void 0);
+  }
+  t.throws(withVoid, 'throws if undefined');
+
+  function withEmpty() {
+    actionNames('');
+  }
+  t.throws(withEmpty, 'throws if empty');
+
+  function withEmpty2() {
+    actionNames('  ');
+  }
+  t.throws(withEmpty2, 'throws if empty');
 
   t.end();
 });

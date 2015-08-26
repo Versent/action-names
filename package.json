@@ -30,6 +30,7 @@
     "tape-catch": "^1.0.4"
   },
   "dependencies": {
-    "lodash.snakecase": "^3.0.1"
+    "lodash.snakecase": "^3.0.1",
+    "lodash.trim": "^3.0.1"
   }
 }
