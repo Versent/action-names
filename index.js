@@ -20,7 +20,7 @@ function addGroup(resource, actionTypes, group) {
 }
 
 module.exports = function(resource) {
-  const actionTypes = {};
+  var actionTypes = {};
 
   addGroup(resource, actionTypes, 'fetch');
   addGroup(resource, actionTypes, 'create');
