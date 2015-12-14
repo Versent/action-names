@@ -25,8 +25,7 @@ module.exports = function(resource) {
 
   resource = trim(resource);
   if (resource == '')   throw new Error('Expected resource');
-
-  const actionTypes = {};
+  var actionTypes = {};
 
   addGroup(resource, actionTypes, 'fetch');
   addGroup(resource, actionTypes, 'create');
