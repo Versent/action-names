@@ -54,3 +54,22 @@ var names = actionNames('users');
   deleteError:   'USERS_DELETE_ERROR',
 }
 ```
+
+## Config
+
+This modules takes a second argument:
+
+```js
+var names = actionNames('users', config);
+```
+
+`config` is an object with the following options:
+
+`config.addAlias` [true] adds the action aliases e.g. `fetchStart`
+
+## Test
+
+```
+npm i
+npm test
+```
