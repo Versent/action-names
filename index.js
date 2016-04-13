@@ -1,7 +1,7 @@
 var snakeCase = require('lodash.snakecase');
 var trim      = require('lodash.trim');
 
-function addGroup(resource, actionTypes, group, addAlias) {
+function addGroup(resource, actionTypes, group, config) {
   var upperResource = snakeCase(resource).toUpperCase();
   var upperGroup    = group.toUpperCase();
 
@@ -16,25 +16,26 @@ function addGroup(resource, actionTypes, group, addAlias) {
   actionTypes[success] = success;
   actionTypes[error]   = error;
   
-  if (addAlias === true) {
+  if (config.addAlias) {
     actionTypes[startAlias] = start;
     actionTypes[successAlias] = success;
     actionTypes[errorAlias] = error;
   }
 }
 
-module.exports = function(resource, addAlias) {
+module.exports = function(resource, config) {
   if (resource == null) throw new Error('Expected resource');
-  if (addAlias == null) addAlias = true;
+  config = config || {};
+  if (config.addAlias == null) config.addAlias = true;
 
   resource = trim(resource);
   if (resource == '')   throw new Error('Expected resource');
   var actionTypes = {};
 
-  addGroup(resource, actionTypes, 'fetch', addAlias);
-  addGroup(resource, actionTypes, 'create', addAlias);
-  addGroup(resource, actionTypes, 'update', addAlias);
-  addGroup(resource, actionTypes, 'delete', addAlias);
+  addGroup(resource, actionTypes, 'fetch', config);
+  addGroup(resource, actionTypes, 'create', config);
+  addGroup(resource, actionTypes, 'update', config);
+  addGroup(resource, actionTypes, 'delete', config);
 
   return actionTypes;
 }
