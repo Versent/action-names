@@ -43,6 +43,12 @@ test('returns aliases', function(t) {
   t.is(names.deleteError,   'USERS_DELETE_ERROR');
 });
 
+test('doesnt create aliases when addAlias=false', function(t) {
+  var names = actionNames('users', {addAlias: false});
+
+  t.falsy(names.fetchStart);  
+});
+
 test('throws if unexpected', function(t) {
 
   function withValid() {
