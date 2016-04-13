@@ -4,7 +4,7 @@
   "description": "Standard actions names for Flux",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/tape/bin/tape test/**/*.test.js | tnyan"
+    "test": "ava test/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -24,10 +24,7 @@
   },
   "homepage": "https://github.com/Versent/action-names#readme",
   "devDependencies": {
-    "tap-nyan": "0.0.2",
-    "tap-spec": "^4.0.2",
-    "tape": "^4.2.0",
-    "tape-catch": "^1.0.4"
+    "ava": "^0.14.0"
   },
   "dependencies": {
     "lodash.snakecase": "^3.0.1",
