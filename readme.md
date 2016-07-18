@@ -67,6 +67,11 @@ var names = actionNames('users', config);
 
 `config.addAlias` [true] adds the action aliases e.g. `fetchStart`
 
+`config.additionalActions` accepts additional action names to be
+created in an array. For example:
+
+`config.additionalActions = ['publish']`
+
 ## Test
 
 ```

@@ -15,7 +15,7 @@ function addGroup(resource, actionTypes, group, config) {
   actionTypes[start]   = start;
   actionTypes[success] = success;
   actionTypes[error]   = error;
-  
+
   if (config.addAlias) {
     actionTypes[startAlias] = start;
     actionTypes[successAlias] = success;
@@ -36,6 +36,12 @@ module.exports = function(resource, config) {
   addGroup(resource, actionTypes, 'create', config);
   addGroup(resource, actionTypes, 'update', config);
   addGroup(resource, actionTypes, 'delete', config);
+
+  if (config.additionalActions instanceof Array) {
+    config.additionalActions.forEach(function(action) {
+      addGroup(resource, actionTypes, action, config)
+    });
+  }
 
   return actionTypes;
 }
